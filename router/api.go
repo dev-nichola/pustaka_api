@@ -29,9 +29,11 @@ func Router() {
 	// v1.GET("/hello", bookHandler.HelloHandler)
 	// v1.GET("/book/:id/title", bookHandler.BookHandler)
 	// v1.GET("/query", bookHandler.QueryHandler)
-	v1.POST("/books", bookHandler.PostBooksHandler)
+	v1.POST("/books", bookHandler.CreateBookHandler)
 	v1.GET("/books", bookHandler.GetBooks)
-	v1.GET("/books/:id", bookHandler.GetBook)
+	v1.GET("/book/:id", bookHandler.GetBook)
+	v1.PUT("book/:id/update", bookHandler.UpdateBookHandler)
+	v1.DELETE("book/:id/destroy", bookHandler.DestroyBookHandler)
 
 	router.Run(":8000")
 }
